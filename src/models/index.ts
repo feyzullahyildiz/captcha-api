@@ -1,2 +1,3 @@
-export * from './app.model';
 export * from './admin.model';
+export * from './captcha.model';
+

@@ -1,7 +1,7 @@
 import {Entity, model, property} from '@loopback/repository';
 
 @model()
-export class AppModel extends Entity {
+export class Captcha extends Entity {
   @property({
     type: 'number',
     id: true,
@@ -28,13 +28,13 @@ export class AppModel extends Entity {
   publicKey: string;
 
 
-  constructor(data?: Partial<AppModel>) {
+  constructor(data?: Partial<Captcha>) {
     super(data);
   }
 }
 
-export interface AppModelRelations {
+export interface CaptchaRelations {
   // describe navigational properties here
 }
 
-export type AppWithRelations = AppModel & AppModelRelations;
+export type CaptchaWithRelations = Captcha & CaptchaRelations;

@@ -1,5 +1,4 @@
-import {belongsTo, Entity, model, property} from '@loopback/repository';
-import {AppModel} from './app.model';
+import {Entity, model, property} from '@loopback/repository';
 
 @model()
 export class Admin extends Entity {
@@ -22,8 +21,8 @@ export class Admin extends Entity {
   })
   password: string;
 
-  @belongsTo(() => AppModel)
-  appId: number;
+  // @belongsTo(() => AppModel)
+  // appId: number;
   // @property({
   //   type: 'number',
   //   required: true

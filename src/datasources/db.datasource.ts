@@ -2,7 +2,7 @@ import {inject, lifeCycleObserver, LifeCycleObserver} from '@loopback/core';
 import {juggler} from '@loopback/repository';
 
 const config = {
-  name: 'MyDatasource',
+  name: 'db',
   connector: 'postgresql',
   url: '',
   host: 'localhost',
@@ -19,11 +19,11 @@ const config = {
 @lifeCycleObserver('datasource')
 export class DbDataSource extends juggler.DataSource
   implements LifeCycleObserver {
-  static dataSourceName = 'MyDatasource';
+  static dataSourceName = 'db';
   static readonly defaultConfig = config;
 
   constructor(
-    @inject('datasources.config.MyDatasource', {optional: true})
+    @inject('datasources.config.db', {optional: true})
     dsConfig: object = config,
   ) {
     super(dsConfig);
