@@ -22,14 +22,13 @@ export class Admin extends Entity {
   })
   password: string;
 
-  @belongsTo(() => AppModel, {
-    name: 'app_id'
-  })
-  @property({
-    type: 'number',
-    required: true
-  })
-  app_id: number;
+  @belongsTo(() => AppModel)
+  appId: number;
+  // @property({
+  //   type: 'number',
+  //   required: true
+  // })
+  // app_id: number;
 
   constructor(data?: Partial<Admin>) {
     super(data);

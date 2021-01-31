@@ -33,8 +33,8 @@ export class AppModel extends Entity {
   }
 }
 
-export interface AppRelations {
+export interface AppModelRelations {
   // describe navigational properties here
 }
 
-export type AppWithRelations = AppModel & AppRelations;
+export type AppWithRelations = AppModel & AppModelRelations;
