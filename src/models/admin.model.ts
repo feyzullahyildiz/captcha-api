@@ -1,6 +1,23 @@
 import {Entity, model, property} from '@loopback/repository';
 
-@model()
+/**
+ * This looks working but, lb4 migrate does not work well.
+ * It is not in a transaction
+ * It is trying to create Admin table before captcha table.
+ * So the relation is not working
+ */
+@model({
+  // settings: {
+  //   foreignKeys: {
+  //     fk_order_customerId: {
+  //       name: 'fk_captcha_admin_id',
+  //       entity: 'Captcha',
+  //       entityKey: 'id',
+  //       foreignKey: 'captchaid',
+  //     },
+  //   },
+  // }
+})
 export class Admin extends Entity {
   @property({
     type: 'number',
@@ -21,13 +38,13 @@ export class Admin extends Entity {
   })
   password: string;
 
-  // @belongsTo(() => AppModel)
-  // appId: number;
-  // @property({
-  //   type: 'number',
-  //   required: true
-  // })
-  // app_id: number;
+  @property({
+    type: 'number',
+    required: true,
+  })
+  captchaId: string;
+
+
 
   constructor(data?: Partial<Admin>) {
     super(data);

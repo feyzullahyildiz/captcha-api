@@ -9,7 +9,8 @@ const config = {
   port: 5432,
   user: 'postgres',
   password: '1',
-  database: 'captcha'
+  database: 'captcha',
+  debug: true,
 };
 
 // Observe application's life cycle to disconnect the datasource when
