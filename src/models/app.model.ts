@@ -19,13 +19,13 @@ export class AppModel extends Entity {
     type: 'string',
     required: true,
   })
-  private_key: string;
+  privateKey: string;
 
   @property({
     type: 'string',
     required: true,
   })
-  public_key: string;
+  publicKey: string;
 
 
   constructor(data?: Partial<AppModel>) {
